@@ -1,0 +1,382 @@
+ex:12 #Write a Python function that takes a list and returns a new list with unique elements of the first list.#
+l1=[1,3,5,7,5,3,1,8]
+num=[]
+for a in l1:
+    if a not in num:
+        num.append(a)
+        
+print(num)  
+
+output:[1, 3, 5, 7, 8]
+
+***************************************************************************************************************************************
+ex:15 #Write a Python program to find the second smallest number in a list#
+l=[]
+num=int(input('enter the number:'))
+for i in range(1,num+1):
+    s=int(input('enter the number:'))
+    
+    l.append(s)
+l.sort()
+print('the sorted list:',l)
+print('second smallest number in list:',l[1])
+
+output:
+enter the number:3
+enter the number:1
+enter the number:5
+enter the number:6
+the sorted list: [1, 5, 6]
+second smallest number in list: 5
+
+******************************************************************************************************************************************
+ex:16 # Write a Python program to get unique values from a list#
+list=[12,23,10,2,3,10,2]
+uniquevalue=[]
+for a in list:
+    if a not in uniquevalue:
+        uniquevalue.append(a)
+    
+uniquevalue.sort
+print(uniquevalue)
+
+output:[12, 23, 10, 2, 3]
+
+*********************************************************************************************************************************************
+ex:17 #Write a Python program to check whether a list contains a sub list#
+a=[6,5,7,9,6,5]
+a1=[7,9,6]
+flag=0
+for i in a:
+    for j in a1:
+        if i==j:
+            flag=1
+            break
+if flag==1:
+    print('True')
+else:
+    print('Flase')
+
+output:True
+
+************************************************************************************************************************************************
+ex:29 #Write a Python program to remove an empty tuple(s) from a list of tuples#
+
+
+
+def Remove(tuples):
+    tuples = [t for t in tuples if t]
+    return tuples
+ 
+# Driver Code
+tuples = [(), ('15','8'), (), ('ldr', 'sit'), ('rit', '45'), ('',''),()]
+print(Remove(tuples))
+
+output:[('15', '8'), ('ldr', 'sit'), ('rit', '45'), ('', '')]
+ 
+****************************************************************************************************************************************************
+ex:38 #Write a Python script to print a dictionary where the keys are numbers between 1 and 15.#
+dict={15:3,12:64,3:34}
+for i in dict:
+    if (i>=1 and i<=16):
+        print(i)
+
+output:
+15
+12
+3
+    
+*****************************************************************************************************************************************************
+ex:46 #Write a Python program to find the highest 3 values in a dictionary#
+from collections import Counter
+dict={12:3,5:6,8:2,3:6,89:34,10:13}
+k=Counter(dict)
+high = k.most_common(3)
+print('3 highest value:')
+
+
+for i in high:
+    print(i[0]," : ",i[1]," ")
+
+output:3 highest value:
+89  :  34  
+10  :  13  
+5  :  6 
+
+
+************************************************************************************************************************************************************
+
+ex:47 #Write a Python program to combine values in python list of dictionaries. 
+#Sample data: [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount': 300},{'item': 'item1', 'amount': 750}]
+#o Expected Output: Counter ({'item1': 1150, 'item2': 300})
+
+from collections import Counter
+item_list=[{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount': 300},{'item': 'item1', 'amount': 750}]
+result=Counter()
+for d in item_list:
+    result[d['item']] += d['amount']
+print(result) 
+
+output:Counter({'item1': 1150, 'item2': 300})
+
+******************************************************************************************************************************************************************
+ex:-48 #Write a Python program to create a dictionary from a string.sss
+#o Note: Track the count of the letters from the string. Sample string:'w3resource'
+#o Expected output: {'3': 1,’s’: 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}
+
+from collections import defaultdict,Counter
+str1='w3resource'
+d={}
+for letter in str1:
+     d[letter] = d.get(letter, 0) + 1
+print(d)
+    
+output:{'w': 1, '3': 1, 'r': 2, 'e': 2, 's': 1, 'o': 1, 'u': 1, 'c': 1}
+
+**************************************************************************************************************************************************************
+
+ex:49 #Write a Python function to calculate the factorial of a number (a non-negative integer)#
+def factorial(n):
+      
+    if n == 0:
+        return 1
+     
+    return n * factorial(n-1)
+  
+num =int(input('enter the numbr:'));
+print("Factorial of", num, "is",
+factorial(num))  
+
+output:enter the numbr:6
+Factorial of 6 is 720
+
+*****************************************************************************************************************************************************************
+ex:-50 #Write a Python function to check whether a number is in a given range
+def test_range(n):
+    if n in range(6,12):
+        print( " %s is in the range"%str(n))
+
+    else:
+        print("the number is not in given range")
+    
+test_range(10)  
+
+output: 10 is in the range
+
+*******************************************************************************************************************************************************************
+ex:51 #Write a Python function to check whether a number is perfect or not
+def perfect_number(n):
+    sum=0
+    for i in range(1,n):
+        if n % i == 0:
+            sum += i
+    return sum == n
+print(perfect_number(6))
+
+output:True
+
+**********************************************************************************************************************************************************************
+ex:51 #Write a Python function that checks whether a passed string is palindrome or not.
+def isPalindrome(s):
+    return s == s[::-1]
+s = "bcb"
+n = isPalindrome(s)
+ 
+if n :
+    print("Yes")
+else:
+    print("No")
+ 
+output:Yes
+   
+***************************************************************************************************************************************************************************
+ex:52 #How do you perform pattern matching in Python? Explain.
+ans:
+Pattern matching in computers is as old as the computers themselves. In looking at various sources, you can find 
+different starting points for pattern matching, such as editors. However, the fact is that you can’t really do much 
+with a computer system without having some sort of pattern matching occur.
+For example, the mere act of stopping certain kinds of loops requires that a computer match a pattern between the
+existing state of a variable and the desired state. Likewise, user input requires that the application match the user’s
+input to a set of acceptable inputs.
+
+****************************************************************************************************************************************************************************
+ex:53 #What is lambda function in python? What we call a function which is incomplete version of a function?
+ans:
+Python Lambda Functions are anonymous function means that the function is without a name.
+As we already know that the def keyword is used to define a normal function in Python. Similarly, 
+the lambda keyword is used to define an anonymous function in Python.
+Syntax
+lambda arguments : expression
+
+There are several functions with incomplete prefix such as incomplete gamma functions (vs. gamma function), 
+incomplete beta functions (vs. beta functions), or incomplete Bessel functions (vs. Bessel functions). 
+It seems that the "incomplete" functions are the generalized versions of their own "normal" counterparts
+by introducing new parameters.
+******************************************************************************************************************************************************************************
+ex:54 #How Many Basic Types Of Functions Are Available In Python?
+ans: Functions in Python may be two types:
+
+(i) In-built functions:
+    In-built functions in Python are the in-built codes for direct use. 
+    For example, print() function prints the given object to the standard output device (screen) or to the text stream file.
+
+(ii) User-defined functions:
+    User-defined functions in python are the functions that are defined or customized to perform certain specific tasks.
+    In other words, the functions we use written by others in the form of library,
+    are user-defined functions and are also termed as library functions.
+*******************************************************************************************************************************************************************************
+ex:55 #How can you pick a random item from a list or tuple?
+ans: The choice() functionis useful for this purpose. 
+It returns on item randomly selected from any sequence object (tuple in this case)
+example:    
+import random as r
+l=[2,5,9,7]
+r.choice(l)
+
+output:5 #choice randon number in sequ.
+    
+******************************************************************************************************************************************************************************
+ex:56 #How can you pick a random item from a range?
+ans:The randrange() function from random module returns a randomly selected number from range of numbers. 
+The format of function is as follows −
+
+syntax:
+randrange(start, stop, step
+
+example:    
+import random
+n=random.randrange(10,20,2) #even numbers between 10-20
+n
+output:
+14       # random even number in range
+*******************************************************************************************************************************************************************************
+ex:57 #How can you get a random number in python?
+ans:
+Python defines a set of functions that are used to generate or manipulate random numbers through the random module.
+
+example:
+import random
+num = random.random()
+print(num)
+
+output:0.30078080420602904
+    
+********************************************************************************************************************************************************************************
+ex:58 #How will you set the starting value in generating random numbers?
+ans:A random number generator helps to generate a sequence of digits that can be saved as afunction to be
+used later in operations. Random number generator doesn’t actually produce random values as it requires
+an initial value called SEED. 
+     For example, We will use the code to sample 10 numbers between 1 and 100 and repeat it a couple of times.
+For the first time the SET.SEED() will start at seed as 5 and second time as seed as 12. 
+Ten random numbers have been generated for each iteration.
+ set.seed(5)
+example:    
+# random number will generate from 5
+TenRandomNumbers <- sort(sample.int(100, 10))
+TenRandomNumbers
+
+Output:
+
+Ten Random
+**********************************************************************************************************************************************************************************
+ex:59 #How will you randomizes the items of a list in place?
+ans:The method shuffle() can be used to randomize the items of a list in place. It should be noted that 
+this function is not accessible directly and therefore we need to import or call this function using random static object.
+
+Syntax:   shuffle (lst)
+
+Here, ‘lst’ is passed as a parameter which could be a list or tuple. The shuffle() returns a reshuffled list of items.
+
+Example:        
+import random
+list = [20, 16, 10, 5];
+random.shuffle(list)
+print "Reshuffled list : ",  list
+random.shuffle(list)
+print "Reshuffled list : ",  list
+
+Output : 
+
+Reshuffled list :  [16, 10, 5, 20]
+
+Reshuffled list :  [5, 20, 10, 16]
+
+*************************************************************************************************************************************************************************************
+ex:60 #Write a Python program to convert degree to radian.
+    
+pi=22/7
+radian = float(input("Input radians: "))
+deg = radian*(180/pi)
+print(deg)
+
+output:
+Input radians: 12
+687.2727272727273
+
+***********************************************************************************************************************************************************************************
+ex:61 #Write a Python program to calculate the area of a trapezoid.
+a = int(input('Base a value: '))
+b = int(input('Base b value: '))
+h = int(input("Height of trapezoid: "))
+area = ((a + b)/2) * h
+print("Area is:", area)
+
+output:Base a value: 12
+Base b value: 10
+Height of trapezoid: 3
+Area is: 33.0
+
+********************************************************************************************************************************************************************************
+ex:62 #Write a Python program to calculate the area of a parallelogram.
+b = int(input('Length of base: '))
+h = int(input('Measurement of height: '))
+area = b*h
+print("Area is: ", area)
+
+output:
+Length of base: 12
+Measurement of height: 12
+Area is:  144
+
+*******************************************************************************************************************************************************************************
+ex:63 #Write a Python program to calculate surface volume and area of a cylinder
+pi=3.14
+d=int(input('enter a diameter:'))
+h=int(input('enter the hieght:'))
+volume=pi*d*d*h
+s=((pi/4)*d*d*h)
+print('volume is:',volume)
+print('surface area is:',s)
+
+output:
+enter a diameter:5
+enter the hieght:3
+volume is: 235.5
+surface area is: 58.875
+*******************************************************************************************************************************************************************************
+ex:64 #Write a Python program to returns sum of all divisors of a number.
+def sum_divisor(n):
+    d=[1]
+    for i in range(2,n):
+        if (n % i)==0:
+            d.append(i)
+    return sum(d)
+print(sum_divisor(6))
+print(sum_divisor(8))
+
+output:
+6
+7
+********************************************************************************************************************************************************************************
+ex:65 #Write a Python program to find the maximum and minimum numbers from the specified decimal numbers.
+from decimal import *
+list=('2.25 1.4 3.1 2.0 4.6')
+num=list.split()
+print("Maximum: ", max(num))
+print("Minimum: ", min(num))
+
+output:
+Maximum:  4.6
+Minimum:  1.4
+
+***********************************************************************************************************************************************************************************
